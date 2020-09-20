@@ -17,8 +17,8 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "a3f8d04cab3126c3")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.6")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9118b5091cd0a40a")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -182,11 +182,58 @@ namespace Umbraco.Web.PublishedModels
 		public global::System.Web.IHtmlString ArticlesBodyText => this.Value<global::System.Web.IHtmlString>("articlesBodyText");
 
 		///<summary>
+		/// Articles Grid
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
+		[ImplementPropertyType("articlesGrid")]
+		public global::Newtonsoft.Json.Linq.JToken ArticlesGrid => this.Value<global::Newtonsoft.Json.Linq.JToken>("articlesGrid");
+
+		///<summary>
 		/// Articles Title: Title of the main articles page where all articles are shown
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
 		[ImplementPropertyType("articlesTitle")]
 		public string ArticlesTitle => this.Value<string>("articlesTitle");
+
+		///<summary>
+		/// Featured Products
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
+		[ImplementPropertyType("featuredProducts")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> FeaturedProducts => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("featuredProducts");
+	}
+
+	/// <summary>Articles Grid</summary>
+	[PublishedModel("articlesGrid")]
+	public partial class ArticlesGrid : PublishedContentModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
+		public new const string ModelTypeAlias = "articlesGrid";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ArticlesGrid, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public ArticlesGrid(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Products Grid
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.7.0")]
+		[ImplementPropertyType("productsGrid")]
+		public global::Newtonsoft.Json.Linq.JToken ProductsGrid => this.Value<global::Newtonsoft.Json.Linq.JToken>("productsGrid");
 	}
 
 	/// <summary>Folder</summary>
